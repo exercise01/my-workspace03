@@ -1,4 +1,29 @@
 .main{
+    display:grid;
+    grid-template-columns: 20px 1fr 20px;
     color:blue;
-    font-size: 25px;
+    font-size: 12px;
+    background-color: #e6c7c7;
+    width:auto;
+    height: 200px;
+    
+    h1{
+        grid-column: 2;
+        color: #000;        
+        background-color: #e8a9a9;
+        text-align: center;
+        width:auto;
+        height: 50px;                
+    }
 }
+
+h2{
+    grid-column: 2;
+    color: #000;        
+    background-color: #e8a9a9;
+    text-align: center;
+    width:auto;
+    height: 50px;       
+}
+
+
