@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+}
+
+
+
+div{
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows:
+          [head] 100px
+          [title] auto
+          [sub] auto
+          [recent] auto
+          [root] 1000px;
+    grid-row-gap: 20px;
+    row-gap: 20px;
+    font-family: '遊ゴシック',sans-serif;  
+    font-style: italic;  
+    text-shadow: 5px 10px 10px #888888
+}
+
+div > *{
+    grid-column: 2 /-2;
+}
+
+header{
+    grid-row: head;
+    justify-self: center;
+    align-self: center;
+    font-size: 40px;
+    color: #555d6b;
+}
+nav{
+    grid-row: head;
+    justify-self: center;
+    align-self: end;
+}
+
+
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 20px ;
+    column-gap: 20px;
+}
+nav a{
+    color:#666666;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold; 
+}
+nav a:hover{
+    color:#ef9504;
+}
+
+
+figure.hero{
+    grid-column: 1/ -1;
+    grid-row: title / span 2;
+}
+
+figure.hero img{
+    
+    height: 547px;
+    object-fit: cover;
+    vertical-align: bottom;
+    filter: brightness(70%);
+    z-index: -1;
+    position: relative;
+}
+// img{
+//     width: 100%;
+//     height: auto;
+// }
+
+h1{
+    grid-row: title;
+}
+p{
+    grid-row: sub;
+}
+section{
+    grid-row: recent;
+}
+footer{
+    grid-row: foot;
+}
+
