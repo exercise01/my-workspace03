@@ -64,7 +64,8 @@ figure.hero{
 
 figure.hero img{
     
-    height: 547px;
+    height: 347px;
+    width:auto;
     object-fit: cover;
     vertical-align: bottom;
     filter: brightness(70%);
@@ -78,6 +79,7 @@ figure.hero img{
 
 h1{
     grid-row: title;
+    color:white;
 }
 p{
     grid-row: sub;
