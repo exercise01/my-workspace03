@@ -1,0 +1,101 @@
+<p>モバイルWebがわからない。こういった疑問にお答えします。Angularに使う、JavaScriptを主に、Rxjs、TypeScript、Nodejsを分かりやすく解説します。</p>
+    
+<p>Firebaseをバックエンドに、
+Angularをフロントエンドに使った、
+簡単なアプリを紹介。</p>
+
+<p>モバイルWebがわからない。<br>こういった疑問にお答えします。</p>
+
+
+
+<header>
+    <h1>Header</h1>
+  </header>
+  
+  <nav>
+    main navigation in here
+  </nav>
+  
+  Here is our page's main content
+  <main>
+    It contains an article
+    <article>
+      <h2>Article heading</h2>
+  
+      article content in here
+    </article>
+  
+    <aside>
+      <h2>Related</h2>
+  
+      aside content in here
+    </aside>
+  </main>
+  
+  And here is our main footer that is used across all the pages of our website
+  
+  <footer>
+    footer content in here
+  </footer>
+
+
+
+  <h1>Links</h1>
+
+  <p>This is a link to <a href="https://www.mozilla.org">Mozilla</a>.</p>
+  
+  <p>
+    Another link, to the
+    <a href="https://developer.mozilla.org">Mozilla Developer Network</a>.
+  </p>
+  
+  <h2>Buttons</h2>
+  
+  <p>
+    <button data-message="This is from the first button">Click me!</button>
+    <button data-message="This is from the second button">Click me too!</button>
+    <button data-message="This is from the third button">And me!</button>
+  </p>
+  
+  <h2>Form</h2>
+  
+  <form>
+    <div>
+      <label for="name">Fill in your name:</label>
+      <input type="text" id="name" name="name" />
+    </div>
+    <div>
+      <label for="age">Enter your age:</label>
+      <input type="text" id="age" name="age" />
+    </div>
+    <div>
+      <label for="mood">Choose your mood:</label>
+      <select id="mood" name="mood">
+        <option>Happy</option>
+        <option>Sad</option>
+        <option>Angry</option>
+        <option>Worried</option>
+      </select>
+    </div>
+  </form>
+
+  <!-- ボタンとリンクのテキスト ラベルが分かりやすく、
+   特徴的であることを確認してください。
+   スクリーン リーダーのユーザーはボタンとフォーム コントロールのリストを表示することがあるため、
+   ラベルに「ここをクリック」だけを使用しないでください。 -->
+
+<!-- <p>良い例</p> -->
+  <p>
+    Whales are really awesome creatures.
+    <a href="whales.html">Find out more about whales</a>.
+  </p>
+
+  <!-- <p>悪い例</p>   -->
+  <p>
+    Whales are really awesome creatures. To find out more about whales,
+    <a href="whales.html">click here</a>.
+  </p>
+
+
+
+<router-outlet />
