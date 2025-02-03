@@ -1,0 +1,30 @@
+<button (click)="saveChanges()">保存</button>
+
+
+
+@for (item of items; track item) {
+  <li (keydown)="listKeyManager.onKeydown($event)" #listItem> {{ item }}</li>
+}
+
+<!-- @for (item of items; track item) {
+  <li (keydown)="listKeyManager.onKeydown($event)" #listItem
+  [class.active]="listKeyManager.activeItemIndex"
+  > {{ item }}</li>
+} -->
+
+
+@for (item of items; track item) {
+  <div (keydown)="focusKeyManager.onKeydown($event)" #focusableElement tabindex="0">
+   {{ item }}
+  </div>
+}
+
+<!-- @for (item of items; track item) {
+  <div (keydown)="focusKeyManager.onKeydown($event)" #focusableElement tabindex="0"
+  [class.active]="focusKeyManager.activeItemIndex" 
+  (focus)="focusKeyManager.setActiveItem(index)">
+  {{ item }}
+  </div>
+} -->
+
+<router-outlet />
