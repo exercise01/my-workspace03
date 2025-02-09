@@ -1,0 +1,19 @@
+@use '@angular/cdk';
+
+button {
+  @include cdk.high-contrast {
+    outline: solid 1px;
+  }
+}
+
+  .list-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .list-item.active {
+    background-color: #faf3f3;
+  }

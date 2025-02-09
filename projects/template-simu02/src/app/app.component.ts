@@ -10,9 +10,10 @@ import { ListItemComponent } from './list-item/list-item.component';
   selector: 'app-root',
   imports: [RouterOutlet, A11yModule,
     MatButtonModule, MatCardModule, 
-    ListComponent, ListItemComponent],
-  templateUrl: './html05/app.component.html',
-  styleUrl: './html05/app.component.scss',
+   // ListComponent, ListItemComponent
+  ],
+  templateUrl: './html04/app.component.html',
+  styleUrl: './html04/app.component.scss',
 })
 export class AppComponent {
   title = 'template-simu02';

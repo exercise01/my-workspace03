@@ -2,13 +2,14 @@
     margin: 0;
 }
 
-.example-card {
+mat-card {
     max-width: auto;
   }
   
-  .example-header-image {
+mat-card-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
+    height: 100px;
   }
 
 
@@ -17,7 +18,7 @@ div{
     display: grid;
     grid-template-columns: 20px 1fr 20px;
     grid-template-rows:
-         [head] 200px
+         [head] 100px
           [top] auto          
           
           [recent] auto
@@ -51,7 +52,20 @@ header{
 
 section{
     grid-row: recent;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 10px;
+    gap: 20px 10px;
+}
+
+section{
+    color: #000000;
+    text-decoration: none;
+}
+
+section h2{
+    font-size: 14px ;
+
 }
 
 footer{

@@ -1,7 +1,5 @@
 <button (click)="saveChanges()">保存</button>
 
-
-
 @for (item of items; track item) {
   <li (keydown)="listKeyManager.onKeydown($event)" #listItem> {{ item }}</li>
 }
@@ -26,5 +24,6 @@
   {{ item }}
   </div>
 } -->
+
 
 <router-outlet />

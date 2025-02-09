@@ -8,13 +8,18 @@ import { ListItemDirective } from './list-item/list-item.directive';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet ],
-  templateUrl: './html02/app.component.html',
-  styleUrl: './html02/app.component.scss'
+  templateUrl: './html01/app.component.html',
+  styleUrl: './html01/app.component.scss'
 })
 export class AppComponent implements AfterViewInit {
   title = 'template-simu03';   
 
   items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+
+  //-------------------
+  //listKeyManager!: ListKeyManager<any>;
+  //@ViewChildren('listItem')
+  //listItems!: QueryList<ElementRef>;  
 
   //option----------
   // listKeyManager!: ListKeyManager<ListItemDirective>;//error
@@ -23,23 +28,37 @@ export class AppComponent implements AfterViewInit {
    @ViewChildren(ListItemDirective) 
    listItems!: QueryList<ListItemDirective>;
    
-  //option
-  constructor(private elementRef: ElementRef) { }
+
+  //-------------------
+
+  @ViewChildren('focusableElement') 
+  focusableElements!: QueryList<ElementRef>; 
+
+  focusKeyManager!: FocusKeyManager<any>;
+  index: any;
+
+  //LiveAnnouncer と option
+  constructor(private liveAnnouncer: LiveAnnouncer, private elementRef: ElementRef) { }
+
 
   ngAfterViewInit() {
-   
+    //this.listKeyManager = new ListKeyManager<any>(this.listItems);
     this.listKeyManager = new ListKeyManager<FocusableOption>(this.listItems) // ListKeyManager の型も FocusableOption に
-      .withVerticalOrientation(true)
-      .withHorizontalOrientation('rtl')//'ltr' | 'rtl' | null
-      .withWrap(false);
-    //リスト内の最初の有効な項目をアクティブ項目に設定します。
-    this.listKeyManager.setFirstItemActive();    
+      .withVerticalOrientation()
+      .withHorizontalOrientation(null)
+      .withWrap();
+
+    this.listKeyManager.setFirstItemActive();
+
+    this.focusKeyManager = new FocusKeyManager<any>(this.focusableElements);
   }
 
   onKeydown(event: KeyboardEvent) {
     this.listKeyManager.onKeydown(event);
-    
-
-  }  
+  }
+  //LiveAnnouncer
+  saveChanges() {
+      this.liveAnnouncer.announce('変更が保存されました。');
+  }
 
 }

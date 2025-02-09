@@ -1,0 +1,32 @@
+<!-- @for (item of items; track item) {
+  <div (keydown)="focusKeyManager.onKeydown($event)" #focusableElement tabindex="0"
+  [class.active]="focusKeyManager.activeItemIndex" 
+  (focus)="focusKeyManager.setActiveItem(index)">
+  {{ item }}
+  </div>
+} -->
+
+<!-- <div class="list-container" tabindex="0" (keydown)="onKeydown($event)">
+  <div
+    *ngFor="let item of items; let i = index"
+    appListItem
+    #listItem="appListItem"
+    class="list-item"
+    [class.active]="listKeyManager?.activeItemIndex === i"
+  >
+    {{ item }}
+  </div>
+</div> -->
+
+<button>Check!</button>
+
+@for (item of items; track item) {
+  
+  <div (keydown)="onKeydown($event)"     class="list-item" 
+  > 
+   {{ item }}
+  </div>
+
+}
+
+<router-outlet />
